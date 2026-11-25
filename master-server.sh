@@ -101,3 +101,10 @@ sudo chmod 666 /var/run/docker.sock
 
 
 sudo systemctl restart jenkins
+###########################################################################################
+# To install sonar and nexus
+###########################################################################################
+apt update -y
+docker run -d -p 9000:9000 --name sonar-server sonarqube:latest
+docker run -d -p 8081:8081 --name nexus-server sonatype/nexus3
+
